@@ -4,7 +4,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family:'Papyrus','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Cormorant Garamond', serif;
+font-weight: 700; /* Biar agak tebal dan terbaca jelas */
 }
 
 body {
