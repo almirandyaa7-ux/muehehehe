@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>muehehe</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <div class="gold-dust"></div>
+
+  <div class="container">
+    
+    <div id="screen-welcome" class="card active">
+      <div class="magical-book">🥳🎂🎁</div>
+      <h1 class="glow-text">HAPPY BIRTHDAY!</h1>
+        <p>You Came Into This World This Exact Day!</p>
+      <div class="amy-photo">
+        <img id="character-img" src="foto amy.png" alt="d'day!">
+        
+      </div>
+      
+      <div class="input-nama-container" style="margin: 20px 0 15px 0;">
+        <input type="text" id="input-nama" placeholder="Enter your name..." 
+               style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ca8a04; background: rgba(0,0,0,0.3); color: #fef08a; text-align: center; font-family: 'Poppins', sans-serif; font-size: 0.95rem;">
+      </div>
+
+      <audio id="bg-music" src="background-music.mp3" loop></audio>
+
+  <button id="music-toggle" class="floating-music-btn" onclick="toggleMusic()">
+  <span id="music-icon"><i class="fa-solid fa-music"></i></span>
+</button>
+
+      <p id="welcome-text">such a perfect day to help me, eh? >:D</p>
+      <button class="btn" onclick="validasiNama()">what is this?</button>
+    </div>
+
+    <div id="screen-taman" class="card">
+      <h2 class="glow-text">Aira's Backyard 🫜🏡</h2>
+
+      <div class="plant-container">
+        <div id="plant-pot">🌱</div>
+        <div id="plant-status">status: the seed haven't grown yet...</div>
+      </div>
+
+      <div class="level-grid">
+        <button id="btn-lvl1" class="btn level-btn" onclick="startLevel(1)">
+          <span class="icon">☀️</span> collect the sun light
+        </button>
+        <button id="btn-lvl2" class="btn level-btn" onclick="startLevel(2)" disabled>
+          <span class="icon">🔒</span> get some water
+        </button>
+        <button id="btn-lvl3" class="btn level-btn" onclick="startLevel(3)" disabled>
+          <span class="icon">🔒</span> add fertilizer
+        </button>
+      </div>
+
+      <button id="btn-siram" class="btn special-btn" style="display: none;" onclick="siramTanaman()">
+        ✨ water the flower ✨
+      </button>
+    </div>
+
+    <div id="screen-lvl1" class="card">
+      <h2 class="glow-text">☀️ get those photons!</h2>
+      <div id="quiz-container">
+        <p id="quiz-question" class="question-text">Loading...</p>
+        <div class="quiz-options">
+          <button class="btn option-btn" onclick="checkAnswer(0)"></button>
+          <button class="btn option-btn" onclick="checkAnswer(1)"></button>
+          <button class="btn option-btn" onclick="checkAnswer(2)"></button>
+        </div>
+      </div>
+    </div>
+
+    <div id="screen-lvl2" class="card">
+      <h2 class="glow-text">💧 catch the water's bucket!</h2>
+      <p>tap the floating bucket to claim your water! clicks left: <span id="click-target">5</span></p>
+      <div class="game-area">
+        <div id="moving-bucket" onclick="catchBucket()">🪣✨</div>
+      </div>
+    </div>
+
+    <div id="screen-lvl3" class="card">
+      <h2 class="glow-text">✨ a fertilizer is needed!</h2>
+      <p>upload a photo of you :> if its a different one, once Aira checks it, it's the end for you...</p>
+      <div class="upload-area">
+        <input type="file" id="photo-input" accept="image/*" onchange="previewImage(event)">
+        <div id="preview-box">📁 put it here</div>
+      </div>
+      <button id="btn-submit-photo" class="btn" onclick="submitPhoto()" disabled> send</button>
+    </div>
+
+    <div id="screen-reward" class="card">
+      <h1 class="glow-text">🌼 IT BLOOMS! 🌼</h1>
+      <p>Thank you for helping me, Aan! Now i can sleep in peace. Here is your reward >:D</p>
+      
+      <div class="video-container">
+        <video id="main-video" controls>
+          <source src="video-hadiah.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <button class="btn back-btn" onclick="kembaliKeTaman()">⬅️ go back to Aira's backyard</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

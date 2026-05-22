@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family:'Papyrus','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+  /* Diubah ke nuansa dreamy kehijauan dengan pendaran hangat kekuningan (Gold-Sage) */
+  background: linear-gradient(135deg, #182e1e 0%, #2f4c3a 40%, #5d6333 100%);
+  color: #fef08a; /* Teks dominan kuning muda lembut */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Partikel Debu Emas Berpendar */
+.gold-dust {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(#fef08a 1.5px, transparent 0),
+    radial-gradient(#f59e0b 1px, transparent 0);
+  background-size: 50px 50px, 70px 70px;
+  background-position: 0 0, 25px 25px;
+  opacity: 0.25;
+  animation: dustFloat 25s linear infinite;
+  z-index: 0;
+}
+
+@keyframes dustFloat {
+  from { background-position: 0 0, 25px 25px; }
+  to { background-position: 50px 100px, 75px 125px; }
+}
+
+.container {
+  width: 90%;
+  max-width: 480px;
+  z-index: 10;
+}
+
+/* Kotak UI Berpendar Kuning Emas */
+.card {
+  background: rgba(28, 48, 36, 0.85);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(254, 240, 138, 0.3); /* Border emas tipis */
+  border-radius: 24px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6), inset 0 0 25px rgba(234, 179, 8, 0.15);
+  display: none;
+  transform: scale(0.95);
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card.active {
+  display: block;
+  transform: scale(1);
+}
+
+/* Hiasan Buku Bercahaya Magis */
+.magical-book {
+  font-size: 4rem;
+  margin-bottom: 10px;
+  display: inline-block;
+  filter: drop-shadow(0 0 15px rgba(254, 240, 138, 0.8));
+  animation: floatBook 3s ease-in-out infinite;
+}
+
+@keyframes floatBook {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+/* Glow Efek Teks Kuning Keemasan */
+.glow-text {
+  font-weight: 700;
+  color: #fef9c3;
+  text-shadow: 0 0 12px rgba(234, 179, 8, 0.7), 0 0 25px rgba(254, 240, 138, 0.4);
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #d1fae5;
+  margin-bottom: 25px;
+}
+
+/* Tombol Bertema Emas-Hijau */
+.btn {
+  background: linear-gradient(135deg, #ca8a04 0%, #854d0e 100%);
+  color: #fff;
+  border: 1px solid rgba(254, 240, 138, 0.4);
+  padding: 14px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(202, 138, 4, 0.3);
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(254, 240, 138, 0.4);
+  background: linear-gradient(135deg, #eab308 0%, #a16207 100%);
+}
+
+.btn:disabled {
+  background: #2b3a2f;
+  color: #5c6e61;
+  box-shadow: none;
+  cursor: not-allowed;
+  border: 1px dashed rgba(255,255,255,0.1);
+}
+
+.option-btn {
+  background: rgba(255, 255, 255, 0.03);
+  color: #fef08a;
+  border: 1px solid rgba(254, 240, 138, 0.2);
+}
+
+.special-btn {
+  background: linear-gradient(135deg, #facc15 0%, #ca8a04 100%);
+  color: #1c3024;
+  font-weight: 700;
+  box-shadow: 0 0 25px rgba(250, 204, 21, 0.5);
+  animation: pulseBtn 1.5s infinite;
+}
+
+@keyframes pulseBtn {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); box-shadow: 0 0 35px rgba(250, 204, 21, 0.7); }
+}
+
+/* Desain Tombol Back Akhir */
+.back-btn {
+  background: transparent;
+  color: #fef08a;
+  border: 1px solid #ca8a04;
+  margin-top: 20px;
+}
+.back-btn:hover {
+  background: rgba(202, 138, 4, 0.2) !important;
+}
+
+/* Kontainer Tanaman */
+.plant-container {
+  margin: 25px 0;
+  padding: 25px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  border: 1px solid rgba(254, 240, 138, 0.1);
+}
+
+#plant-pot {
+  font-size: 5rem;
+  filter: drop-shadow(0 0 10px rgba(254,240,138,0.3));
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.grow-animation {
+  animation: popUp 0.6s ease;
+}
+
+@keyframes popUp {
+  0% { transform: scale(0.6); filter: drop-shadow(0 0 0px #000); }
+  50% { transform: scale(1.3); filter: drop-shadow(0 0 25px #facc15); }
+  100% { transform: scale(1); }
+}
+
+/* Game Area Level 2 */
+.game-area {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  border: 1px dashed #ca8a04;
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+#moving-bucket {
+  position: absolute;
+  font-size: 2.8rem;
+  cursor: pointer;
+  left: 45%;
+  top: 40%;
+  user-select: none;
+  filter: drop-shadow(0 0 8px rgba(254,240,138,0.5));
+  transition: all 0.22s ease-out;
+}
+
+/* Upload Area Level 3 */
+#preview-box {
+  border: 2px dashed #ca8a04;
+  border-radius: 16px;
+  padding: 40px 20px;
+  background: rgba(0,0,0,0.2);
+  color: #fef08a;
+  min-height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.amy-photo {
+  box-shadow: 0 0 30px rgba(254, 240, 138, 0.3);
+ border-radius: 10px;
+ border: 1px;
+ display: flex;
+ overflow: hidden;
+ height: 250px;
+}
+ 
+
+/* Video Frame */
+.video-container {
+  margin-top: 20px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(254, 240, 138, 0.3);
+  border: 1px solid rgba(254, 240, 138, 0.2);
+}
+
+video {
+  width: 100%;
+  display: block;
+}
+
+/* Tombol Floating Musik Bulat Magis */
+/* Tombol Floating Musik Transparan (Glassmorphism) */
+.floating-music-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  
+  /* Membuat background transparan dengan efek blur kaca */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  
+  /* Border emas tipis transparan */
+  border: 1px solid rgba(254, 240, 138, 0.4); 
+  color: #fef08a; /* Warna ikon note musik emas muda */
+  font-size: 1.5rem;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 9999;
+  
+  /* Pendaran cahaya emas lembut di sekeliling lingkaran */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), 
+              0 0 15px rgba(254, 240, 138, 0.2);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Efek saat tombol disentuh/hover */
+.floating-music-btn:hover {
+  transform: scale(1.08);
+  background: rgba(254, 240, 138, 0.15); /* Sedikit lebih terang saat di-hover */
+  border: 1px solid rgba(254, 240, 138, 0.7);
+  box-shadow: 0 0 25px rgba(254, 240, 138, 0.6);
+}
+
+/* Animasi Putar Lembut saat Lagu Menyala */
+.rotate-music {
+  animation: spinning 6s linear infinite; /* Diperlambat dari 4s ke 6s agar lebih dreamy */
+}
+
+@keyframes spinning {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Animasi Putar saat Lagu Menyala */
+.rotate-music {
+  animation: spinning 4s linear infinite;
+}
+
+@keyframes spinning {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Mengatur dekorasi ikon musik di dalam tombol */
+#music-icon i {
+  color: #fef08a; /* Warna dasarnya emas muda */
+  font-size: 1.3rem;
+  
+  /* Efek bayangan berpendar emas terang */
+  filter: drop-shadow(0 0 8px rgba(254, 240, 138, 0.8)); 
+  transition: all 0.3s ease;
+}
+
+/* Efek interaktif: Ketika tombol di-hover, warnanya berubah makin menyala */
+.floating-music-btn:hover #music-icon i {
+  color: #fff; /* Berubah jadi putih bersih di tengah */
+  filter: drop-shadow(0 0 15px #fef08a) drop-shadow(0 0 25px #ca8a04); /* Pendaran emas ganda */
+  transform: scale(1.1);
+}
+
+#character-img {
+  /* ... kode styling gambarmu yang lama (width, border-radius, dll) ... */
+  
+  /* Tambahkan baris ini di paling bawah jika belum ada */
+  transition: opacity 0.4s ease-in-out; 
+}
