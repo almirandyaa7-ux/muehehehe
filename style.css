@@ -4,8 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Papyrus', serif;
-font-weight: 700; /* Biar agak tebal dan terbaca jelas */
+  font-family: 'Papyrus', fantasy, sant-serif; /* Biar agak tebal dan terbaca jelas */
 }
 
 body {
